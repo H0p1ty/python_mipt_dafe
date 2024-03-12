@@ -53,18 +53,18 @@ class Window(QtWidgets.QMainWindow):
                 text = text[:text.find('e')-1] + text[text.find('e'):]
         elif 'e' in text and Window.check_for_single_operation(text):
             for i in Window.ops:
-                if i in text.replace('e-',''):
+                if i in text.replace('e-', ''):
                     if text.count('e') == 2:
-                        if len(text[text.replace('e-','xx').find(i)+1: \
-                                    text.replace('e-','xx', 1).find('e')]) == 3:
-                            text = text[:text.replace('e-','xx').find(i)+2] + \
-                                   text[text.replace('e-','xx', 1).find('e'):]
-                        elif len(text[text.replace('e-','xx').find(i)+1: \
-                                    text.replace('e-','xx', 1).find('e')]) == 1:
-                            text = text[:text.replace('e-','xx').find(i)+1] + '0'
+                        if len(text[text.replace('e-', 'xx').find(i)+1:
+                                    text.replace('e-', 'xx', 1).find('e')]) == 3:
+                            text = text[:text.replace('e-', 'xx').find(i)+2] + \
+                                   text[text.replace('e-', 'xx', 1).find('e'):]
+                        elif len(text[text.replace('e-', 'xx').find(i)+1:
+                                      text.replace('e-', 'xx', 1).find('e')]) == 1:
+                            text = text[:text.replace('e-', 'xx').find(i)+1] + '0'
                         else:
-                            text = text[:text.replace('e-','xx',1).find('e')-1] + \
-                                   text[text.replace('e-','xx',1).find('e'):]
+                            text = text[:text.replace('e-', 'xx', 1).find('e')-1] + \
+                                   text[text.replace('e-', 'xx', 1).find('e'):]
                     else:
                         if len(text[text.find(i)+1:text.find('e')]) == 3:
                             text = text[:text.find(i)+2] + text[text.find('e'):]
@@ -72,7 +72,7 @@ class Window(QtWidgets.QMainWindow):
                             text = text[:text.find(i)+1] + '0'
                         else:
                             text = text[:text.find('e')-1] + text[text.find('e'):]
-                            
+
         else:
             text = text[:len(text)-1]
         self.ui.lineEdit.setText(text)
@@ -119,7 +119,7 @@ class Window(QtWidgets.QMainWindow):
                         num = 1/num
                         if int(num) == num:
                             num = int(num)
-                        text = text[:text.replace('e-','xx').find(i)+1] + str(num)
+                        text = text[:text.replace('e-', 'xx').find(i)+1] + str(num)
         self.ui.lineEdit.setText(text)
 
     # вычисление квадрата числа
@@ -136,7 +136,7 @@ class Window(QtWidgets.QMainWindow):
                     num = float(text[text.replace('e-', 'xx').find(i)+1:])**2
                     if int(num) == num:
                         num = int(num)
-                    text = text[:text.replace('e-','xx').find(i)+1] + str(num)
+                    text = text[:text.replace('e-', 'xx').find(i)+1] + str(num)
 
         self.ui.lineEdit.setText(text)
 
@@ -157,7 +157,7 @@ class Window(QtWidgets.QMainWindow):
                         num = num**0.5
                         if int(num) == num:
                             num = int(num)
-                        text = text[:text.replace('e-','xx').find(i)+1] + str(num)
+                        text = text[:text.replace('e-', 'xx').find(i)+1] + str(num)
         self.ui.lineEdit.setText(text)
 
     # знак суммы
